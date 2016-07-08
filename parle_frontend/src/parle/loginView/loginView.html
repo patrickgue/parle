@@ -1,0 +1,11 @@
+<header>
+  <span>Login</span>
+</header>
+<div class="content">
+  <label for="loginUserNameInput">Username</label>
+  <input id="loginUserNameInput" ng-model="$ctrl.loginUser.userName" type="text"/>
+  <label for="loginUserPasswordInput">Password</label>
+  <input id="loginUserPasswordInput" ng-model="$ctrl.loginUser.userPassword" type="password"/>
+  <a ng-click="$ctrl.login();" class="btn">Login</a> <a href="#signup">signup</a>
+  <span ng-show="$ctrl.error" class="message error">{{$ctrl.error}}</label>
+</div>

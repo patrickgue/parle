@@ -1,0 +1,15 @@
+<header>
+  <a class="btn left" href="#login">login</a>
+  <span>Signup</span>
+  <a class="btn right" href="#home">skip</a>
+</header>
+<div class="content">
+  <label for="signupUserNameInput">Username</label>
+  <input id="signupUserNameInput" ng-model="$ctrl.signupUser.userName" type="text"/>
+  <label for="signupUserPasswordInput">Password</label>
+  <input id="signupUserPasswordInput" ng-model="$ctrl.signupUser.userPassword" type="password"/>
+  <label for="signupUserPasswordRepeatInput">Repeat Password</label>
+  <input id="signupUserPasswordRepeatInput" ng-model="$ctrl.signupUser.userPasswordRepeat" type="password"/>
+  <a ng-click="$ctrl.signup();" class="btn">Signup</a>
+  <span ng-show="$ctrl.error" class="message error">{{$ctrl.error}}</label>
+</div>

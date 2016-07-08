@@ -1,0 +1,20 @@
+<header>
+  <a class="btn left" href="#home"><span class="genericon genericon-previous"></span></a>
+  <span>about</span>
+</header>
+<div class="content">
+  <h2>parlé</h2>
+  <h3>about</h3>
+  <p>This is <i>your</i> app for private chating! With end-to-end encryption
+  only you and your friends can read the messages you send.</p>
+  <p>This application and its backend are free/libre software, licensed under
+  the GNU General Public License version 3 or higher. You may copy,
+  change and redistribute this application under the same conditions.
+    More information about your rights on <a href="http://www.gnu.org/">gnu.org</a></p>
+  <h3>your user</h3>
+  <span><b>Username:</b> {{$ctrl.userName}}</span><br/>
+  <span><b>Your User-ID:</b> {{$ctrl.userId}}</span><br/>
+  <button ng-click="$ctrl.logout()">logout</button>
+  <button ng-click="$ctrl.deleteUser()">delete account</button><br/>
+  <span ng-show="$ctrl.error" class="message error">{{$ctrl.error}}</span>
+</div>

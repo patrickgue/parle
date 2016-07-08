@@ -1,0 +1,17 @@
+.elm {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  float: left;
+  font-size: 16pt;
+  height: 45px;
+  padding-top: 15px;
+}
+
+.elm:hover {
+  background-color: #aaa;
+}
+
+.footer3elm .elm{
+  width: 33.3%;
+}

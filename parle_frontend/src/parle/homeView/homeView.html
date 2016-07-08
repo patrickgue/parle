@@ -1,0 +1,25 @@
+<header>
+  <a href="#settings" class="btn left"><span class="genericon genericon-cog"></span></a>
+  <span>parlé</span>
+  <a href="#about" class="btn right"><span class="genericon genericon-info"></span></a>
+</header>
+<div class="content">
+  <chat-menu ng-repeat="chat in $ctrl.users" name="chat.chatName" message="'chat.lastMessage'"></chat-menu>
+</div>
+<footer class="footer3elm">
+  <a href="#addchat" class="elm"><span class="genericon genericon-plus"></span></a>
+  <div ng-click="$ctrl.openStatusWindow()" class="elm"><span class="genericon genericon-quote"></span></div>
+  <div class="elm"><span class="genericon genericon-search"></span></div>
+</footer>
+
+<div class="floating" ng-show="$ctrl.statusWindow">
+  <div class="content full">
+    <span>Status</span>
+    <div>
+      <button ng-click="$ctrl.closeStatusWindow()" class="grid-15 grid-floatleft grid-button inputgroup-left"><span class="genericon genericon-close"></span></button>
+      <input ng-model="$ctrl.status" class="grid-70 grid-floatleft inputgroup-center" type="text"/>
+      <button ng-click="$ctrl.setStatus()" class="grid-15 grid-floatleft grid-button inputgroup-right">set</button>
+    </div>
+  </div>
+
+</div>

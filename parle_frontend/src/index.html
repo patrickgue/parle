@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html ng-app="parleApp">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0"/>
+    <title>parlé</title>
+    <link rel="stylesheet" href="ext/fonts/freesans/fonts.css"/>
+    <link rel="stylesheet" href="ext/genericons/genericons.css"/>
+    <link rel="stylesheet" href="parle/parle.css" />
+  </head>
+  <body ng-controller="ParleController">
+    <div data-view="splashscreen" data-view-main>
+      <h1 id="splashscreen">parlé</h1>
+    </div>
+
+    <div data-view="login">
+      <login-view></login-view>
+    </div>
+
+    <div data-view="signup">
+      <signup-view></signup-view>
+    </div>
+
+    <div data-view="home">
+      <home-view></home-view>
+    </div>
+
+    <div data-view="addchat">
+      <add-chat-view></add-chat-view>
+    </div>
+
+    <div data-view="page" >
+      <header>
+        <a href="#home" class="left btn"><span class="genericon genericon-previous"></a>
+        <span>header</span>
+      </header>
+      <div class="content">
+        test
+      </div>
+    </div>
+
+    <div data-view="settings" >
+      <header>
+        <a href="#home" class="left btn"><span class="genericon genericon-previous"></span></a>
+        <span>settings</span>
+      </header>
+      <div class="content">
+        <label for="user">Username</label>
+        <input type="text" id="user" />
+      </div>
+    </div>
+
+    <div data-view="about">
+      <about-view></about-view>
+    </div>
+    <!-- libraries -->
+    <script src="ext/angular/angular.min.js"></script>
+    <script src="ext/jquery/jquery.min.js"></script>
+    <script src="lib/viewMan.js"></script>
+
+    <!-- application -->
+    <script src="parle/parle.module.js"></script>
+    <script src="parle/parle.controller.js"></script>
+    <script src="parle/parleServices/parleConstants.js"></script>
+    <script src="parle/parleServices/httpService.js"></script>
+    <script src="parle/parleServices/userService.js"></script>
+    <script src="parle/parleServices/chatService.js"></script>
+    <script src="parle/parleServices/ServiceHelper.js"></script>
+    <script src="parle/parleServices/localStorageService.js"></script>
+    <script src="parle/loginView/loginView.component.js"></script>
+    <script src="parle/signupView/signupView.component.js"></script>
+    <script src="parle/addChatView/addChatView.component.js"></script>
+    <script src="parle/homeView/homeView.component.js"></script>
+    <script src="parle/homeView/chatMenu/chatMenu.component.js"></script>
+    <script src="parle/aboutView/aboutView.component.js"></script>
+
+  </body>
+</html>

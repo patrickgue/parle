@@ -1,0 +1,252 @@
+@import 'homeView/homeView.css';
+@import 'loginView/loginView.css';
+@import 'homeView/chatMenu/chatMenu.css';
+@import 'addChatView/addChatView.css';
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  font-family: "FreeSans";
+  color: #333;
+}
+
+a {
+  color: #333;
+}
+
+input, button, select {
+  font-family: "FreeSans";
+}
+
+header {
+  background-color: #ddd;
+  text-align: center;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+}
+
+footer {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  height: 45px;
+  background-color: #ddd;
+  width: 100%;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+header span {
+  padding: 7px;
+  display: inline-block;
+  font-size: 16pt;
+}
+
+header button.left, header .btn.left {
+  float: left;
+}
+
+header button.right, header .btn.right {
+  float: right;
+}
+
+button, .btn, input[type=button] {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: inline-block;
+  text-decoration: none;
+  height: 45px;
+  padding: 10px;
+  vertical-align: middle;
+  background: #eee; /* Old browsers */
+  background: -moz-linear-gradient(top,  #ffffff 0%, #eeeeee 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #ffffff 0%,#eeeeee 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #ffffff 0%,#eeeeee 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eeeeee',GradientType=0 ); /* IE6-9 */
+  margin: 3px 0px;
+}
+
+button.sml, .btn.sml, input[type="button"].sml {
+  padding: 2px;
+  width: 30px;
+  height: 30px;
+}
+
+button:active, .btn:active, input[type=button]:active {
+  background: #ccc;
+}
+
+button.invert, .btn.invert, input[type=button].invert {
+  background: none;
+  background-color: transparent;
+  color: #eee;
+  border-color: #999;
+}
+
+button.invert:active, .btn.invert:active, input[type=button].invert:active {
+  background-color: #eee;
+  color: #333;
+}
+
+
+
+button .genericon, .btn .genericon {
+  margin:0px;
+  padding: 4px;
+}
+
+header button, header .btn {
+  background: #fff;
+  border: 1px solid #fff;
+  box-shadow: 0px 0px 2px rgba(32,32,32,.4);
+  margin: 0px;
+}
+
+header button:active, header .btn:active {
+  border-color: rgba(32,32,32,.4);
+  box-shadow: inset 0px 0px 2px rgba(32,32,32,.4);
+  background-color: #fff;
+}
+
+
+.btn.noborder, button.noborder {
+  background-color: transparent;
+  border: none;
+}
+
+.btn.noborder.invert, button.noborder.invert {
+  color: #eee;
+}
+
+input[type="text"], input[type="password"], select {
+  box-shadow: inset 0px 0px 2px rgba(32,32,32,.4);
+  padding: 10px;
+  display: block;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  height: 45px;
+}
+
+header {
+  padding: 4px;
+}
+
+
+.content {
+  padding: 53px 4px;
+}
+
+.content.full {
+  padding: 4px 4px;
+}
+
+#splashscreen{
+  font-weight: 400;
+  text-align: center;
+  font-size: 64pt;
+}
+
+.message {
+  display: block;
+  background-color: #ddd;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.message.error {
+  border-color: #dd1010;
+  background-color: #ffaaaa;
+}
+
+
+.grid-18, .grid-20, .grid-30, .grid-40, .grid-50, .grid-60, .grid-70, .grid-80 {
+  display: inline-block !important;
+}
+
+.grid-15 {
+  width: 15% !important;
+}
+
+.grid-20 {
+  width: 20% !important;
+}
+
+.grid-30 {
+  width: 30% !important;
+}
+
+.grid-40 {
+  width: 40% !important;
+}
+
+.grid-50 {
+  width: 50% !important;
+}
+
+.grid-60 {
+  width: 60% !important;
+}
+
+.grid-70 {
+  width: 70% !important;
+}
+
+.grid-80 {
+  width: 80% !important;
+}
+
+.grid-button {
+  margin: 0px;
+}
+
+
+.grid-floatright {
+  float: right;
+}
+
+.grid-floatleft {
+  float: left;
+}
+
+
+[class^="inputgroup"], [class*=" inputgroup"] {
+  margin: 0px;
+}
+
+.inputgroup-left {
+  border-top-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+}
+
+.inputgroup-right {
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+}
+
+.inputgroup-center {
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+}
+
+
+.floating {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.9);
+  color: #eeeeee;
+}

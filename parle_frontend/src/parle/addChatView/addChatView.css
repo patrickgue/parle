@@ -1,0 +1,14 @@
+.yesnomenu {
+  position: fixed;
+  left: 0px;
+  bottom: -85px;
+  height: 85px;
+  width: 100%;
+  background-color: #333333;
+  color: #eeeeee;
+  transition: all 1s;
+}
+
+.yesnomenu.open {
+  bottom: 0px;
+}

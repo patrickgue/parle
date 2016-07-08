@@ -1,0 +1,22 @@
+<header>
+  <a href="#home" class="btn left"><span class="genericon genericon-previous"></span></a>
+  <span>add chat</span>
+</header>
+<div class="content">
+  <label for="searchUser">Search User</label>
+  <div>
+    <input class="grid-80 inputgroup-left" ng-model="$ctrl.search" ng-change="$ctrl.loadSearchUsers()" id="searchUser" type="text"/>
+    <button class="grid-20 grid-floatright grid-button inputgroup-right" ng-click="$ctrl.loadSearchUsers()"><span class="genericon genericon-search"></span></button>
+  </div>
+  <div>
+    <chat-menu ng-class="{active : $ctrl.selectedResult == user.userId}" ng-click="$ctrl.addUser(user.userId)" ng-repeat="user in $ctrl.results" name="user.userName" message="user.userStatus"></chat-menu>
+  </div>
+</div>
+<div class="yesnomenu content full" ng-class="{open:$ctrl.addUserToMenuOpen}">
+  <button ng-click="$ctrl.addUserToMenuClose()" class="invert sml"><span class="genericon genericon-close"></span></button>
+  <span>add user to</span><br/>
+  <div>
+    <button class="grid-50 inputgroup-left grid-floatleft invert">new chat</button>
+    <button class="grid-50 inputgroup-right grid-floatleft invert">existing chat</button>
+  </div>
+</div>

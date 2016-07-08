@@ -1,0 +1,27 @@
+.chatMenu {
+  padding: 3px;
+  transition: all .5s;
+}
+
+.chatMenu:hover {
+  background-color: #eee;
+}
+
+.chatMenuIcon {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  background-color: #333;
+  border-radius: 100%;
+}
+
+.chatMenuWrap, .chatMenuWrap * {
+  vertical-align: top;
+    display: inline-block;
+}
+
+
+.active .chatMenu {
+  transform: scale(.9);
+  background-color: #eeeeee;
+}
