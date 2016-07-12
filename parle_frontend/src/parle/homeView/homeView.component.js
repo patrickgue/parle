@@ -43,6 +43,7 @@
         function(data) {
           vm.statusWindow = false;
           vm.statusError = undefined;
+          vm.statusWindow = false;
         },
         function() {
           vm.statusError = "unable to change status";

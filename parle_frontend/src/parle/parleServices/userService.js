@@ -62,7 +62,7 @@ angular.module("parleApp").factory("UserService", function(HttpService, ParleCon
 
   function setStatus(status, userId, callback, error) {
     HttpService.post(ParleConstants.baseUrl + "users/status/",
-      {userId : userId, userStatus : userStatus},
+      {userId : userId, userStatus : status},
       function(data) {
         ServiceHelper.processCallback(data, callback);
       },
