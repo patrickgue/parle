@@ -4,6 +4,7 @@
   <a href="#about" class="btn right"><span class="genericon genericon-info"></span></a>
 </header>
 <div class="content">
+  <span ng-show="$ctrl.errorMessage" class="message error">{{$ctrl.errorMessage}}</span>
   <chat-menu ng-repeat="chat in $ctrl.users" name="chat.chatName" message="'chat.lastMessage'"></chat-menu>
 </div>
 <footer class="footer3elm">

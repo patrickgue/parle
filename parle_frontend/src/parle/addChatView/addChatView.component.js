@@ -24,7 +24,7 @@
 
     vm.addUserToMenuClose = function() {
       vm.addUserToMenuOpen = false;
-      vm.selectedResult -1;
+      vm.selectedResult = -1;
     };
 
   };

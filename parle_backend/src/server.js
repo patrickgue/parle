@@ -38,6 +38,11 @@ app.use(bodyParser.urlencoded({
 }));
 
 
+
+/**
+ * User Services
+ */
+
 app.get("/parle/users/all", function(req, res) {
   database.select("SELECT * FROM TPAR_USER", function(data){
     res.end(JSON.stringify(data));
@@ -73,6 +78,7 @@ app.post("/parle/users/login", function(req, res) {
       if(sha1(req.body.userPassword) === user.userPassword) {
         res.end(JSON.stringify({userId : user.userId}));
       } else {
+        res.status(401);
         res.end(JSON.stringify(new error("wrong password")));
       }
     }
@@ -99,15 +105,6 @@ app.post("/parle/users/delete", function(req, res) {
       res.status(500).send({error:"user not found"});
       res.end();
     }
-
-  });
-
-});
-
-app.get("/parle/chats/:userId/", function(req, res) {
-  console.log("SELECT * FROM VPAR_CHATS WHERE userId = " + req.params.userId);
-  database.select("SELECT * FROM VPAR_CHATS WHERE userId = " + req.params.userId, function(data) {
-    res.end(JSON.stringify(data));
   });
 });
 
@@ -116,6 +113,25 @@ app.post("/parle/users/search", function(req, res) {
     res.end(JSON.stringify(data));
   });
 });
+
+
+/**
+ * Chat Service
+ */
+
+
+app.get("/parle/chats/:userId/", function(req, res) {
+  database.select("SELECT * FROM VPAR_CHATS WHERE userId = " + req.params.userId, function(data) {
+    res.end(JSON.stringify(data));
+  });
+});
+
+
+app.post("/parle/chats/new", function(req, res) {
+  var chatname = req.body.chatName;
+  var users = req.body.users
+});
+
 
 var server = app.listen(9080, function() {
   var host = server.address().address;

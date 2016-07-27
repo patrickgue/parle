@@ -2,6 +2,7 @@
 
   function HomeViewController (ChatService, UserService, LocalStorageService, $scope) {
     let vm = this;
+    vm.errorMessage = undefined;
     vm.statusWindow = false;
     vm.status = "";
     vm.statusError = undefined;
@@ -21,9 +22,17 @@
     });
 
     function loadChats() {
-      ChatService.loadChats(function(data) {
-        vm.users = data;
-      });
+      ChatService.loadChats(
+        function(data) {
+          vm.users = data;
+          LocalStorageService.store("chatList",data);
+          vm.errorMessage = undefined;
+        },
+        function() {
+          vm.errorMessage = "Network error. Can't load chats. Displaying stored ones instead."
+          vm.users = LocalStorageService.load("chatList");
+          console.log("Error");
+        });
     }
 
     function loadStatus() {

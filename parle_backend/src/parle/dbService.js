@@ -26,6 +26,12 @@ db.serialize(function(){
               + "chatId INTEGER"
             + ")");
 
+    db.run("CREATE TABLE TPAR_MESSAGE ("
+              + "messageId INTEGER PRIMARY KEY AUTOINCREMENT,"
+              + "chatUserId INTEGER, "
+              + "message STRING "
+            + ")")
+
 
     db.run("CREATE VIEW VPAR_CHATS AS "
           + "SELECT ch.userId, u.userName, u.userStatus, c.chatName "
@@ -39,8 +45,8 @@ db.serialize(function(){
     //db.run("INSERT INTO TPAR_USER (userName) VALUES('pat')");
 
     /* testdata */
-    run("INSERT INTO TPAR_USER (userId, userName, userPassword, userStatus) VALUES(1,\"Alice\",\"6367c48dd193d56ea7b0baad25b19455e529f5ee\",\"This is my status\")"); //pw abc123
-    db.run("INSERT INTO TPAR_USER (userId, userName, userPassword, userStatus) VALUES(2,\"Bob\",\"6367c48dd193d56ea7b0baad25b19455e529f5ee\",\"This is my status\")");
+    run("INSERT INTO TPAR_USER (userId, userName, userPassword, userStatus) VALUES(1,\"Alice\",\"6367c48dd193d56ea7b0baad25b19455e529f5ee\",\"Status of Alice\")"); //pw abc123
+    db.run("INSERT INTO TPAR_USER (userId, userName, userPassword, userStatus) VALUES(2,\"Bob\",\"6367c48dd193d56ea7b0baad25b19455e529f5ee\",\"Status of Bob\")");
     db.run("INSERT INTO TPAR_CHAT (chatId, chatName) VALUES(1, \"DefaultChat\")");
     db.run("INSERT INTO TPAR_CHATUSER (chatUserId, userId, chatId) VALUES(1,1,1)");
     db.run("INSERT INTO TPAR_CHATUSER (chatUserId, userId, chatId) VALUES(2,2,1)");
