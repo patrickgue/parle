@@ -1,0 +1,151 @@
+% Created 2016-07-16 Sa. 13:06
+\documentclass[a4paper,titlepage]{article}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\tolerance=1000
+\renewcommand{\familydefault}{phv}
+\usepackage[margin=1in]{geometry}
+\author{Patrick Günthard}
+\date{\today}
+\title{Parlé Technical Documentation}
+\hypersetup{
+  pdfkeywords={},
+  pdfsubject={},
+  pdfcreator={Emacs 24.5.1 (Org mode 8.2.10)}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Database}
+\label{sec-1}
+
+\emph{TODO}
+
+\section{REST Interface}
+\label{sec-2}
+
+\subsection{User Services}
+\label{sec-2-1}
+
+\subsubsection{Search all Users}
+\label{sec-2-1-1}
+
+\begin{enumerate}
+\item Method
+\label{sec-2-1-1-1}
+
+GET
+
+\item Path
+\label{sec-2-1-1-2}
+
+\texttt{/parle/users/all}
+
+\item Parameters
+\label{sec-2-1-1-3}
+
+\emph{none}
+
+\item Return
+\label{sec-2-1-1-4}
+
+\begin{verbatim}
+[
+  {
+    "userId" : "number",
+    "userName" : "string",
+    "userPassword" : "string",
+    "userStatus" : "string"
+  }
+]
+\end{verbatim}
+\end{enumerate}
+
+\subsubsection{Search User By Id}
+\label{sec-2-1-2}
+
+\begin{enumerate}
+\item Method
+\label{sec-2-1-2-1}
+
+GET
+
+\item Path
+\label{sec-2-1-2-2}
+
+\texttt{/parle/users/user/\{userId\}/}
+
+\item Parameters
+\label{sec-2-1-2-3}
+
+\emph{Path Parameter:}
+
+\texttt{userId}
+
+\item Return
+\label{sec-2-1-2-4}
+
+\begin{verbatim}
+{
+  "userId" : "number",
+  "userName" : "string",
+  "userStatus" : "string"
+}
+\end{verbatim}
+\end{enumerate}
+
+\subsubsection{Set User Status}
+\label{sec-2-1-3}
+
+\begin{enumerate}
+\item Method
+\label{sec-2-1-3-1}
+
+POST
+
+\item Path
+\label{sec-2-1-3-2}
+
+\texttt{/parle/users/status/}
+
+\item Parameters
+\label{sec-2-1-3-3}
+
+\emph{POST Parameters}
+
+\begin{verbatim}
+{
+  "userId" : "number",
+  "userStatus" : "string"
+}
+\end{verbatim}
+
+\item Return
+\label{sec-2-1-3-4}
+
+\begin{verbatim}
+{
+  "userId" : "number",
+  "userStatus" : "string"
+}
+\end{verbatim}
+\end{enumerate}
+
+\subsubsection{}
+\label{sec-2-1-4}
+% Emacs 24.5.1 (Org mode 8.2.10)
+\end{document}
