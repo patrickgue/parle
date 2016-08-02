@@ -1,4 +1,4 @@
-% Created 2016-07-16 Sa. 13:06
+% Created 2016-07-27 Mi. 19:43
 \documentclass[a4paper,titlepage]{article}
 \usepackage[latin1]{inputenc}
 \usepackage[T1]{fontenc}
@@ -20,7 +20,7 @@
 \usepackage[margin=1in]{geometry}
 \author{Patrick Günthard}
 \date{\today}
-\title{Parlé Technical Documentation}
+\title{\textbf{Parlé} Technical Documentation}
 \hypersetup{
   pdfkeywords={},
   pdfsubject={},
@@ -145,7 +145,154 @@ POST
 \end{verbatim}
 \end{enumerate}
 
-\subsubsection{}
+\subsubsection{Login}
 \label{sec-2-1-4}
+
+
+\begin{enumerate}
+\item Method
+\label{sec-2-1-4-1}
+
+POST
+
+\item Path
+\label{sec-2-1-4-2}
+
+\texttt{/parle/users/login}
+
+\item Parameters
+\label{sec-2-1-4-3}
+
+\emph{POST Parameters}
+
+\begin{verbatim}
+{
+  "userName" : "string",
+  "userPassword" : "string" 
+}
+\end{verbatim}
+
+\item Return
+\label{sec-2-1-4-4}
+
+\begin{enumerate}
+\item Login Successful
+\label{sec-2-1-4-4-1}
+
+\begin{verbatim}
+{
+  "userId" : "number"
+}
+\end{verbatim}
+
+\item Login Failed
+\label{sec-2-1-4-4-2}
+HTTP Status: \emph{401}
+\begin{verbatim}
+wrong password
+\end{verbatim}
+\end{enumerate}
+\end{enumerate}
+\subsubsection{Signup}
+\label{sec-2-1-5}
+\begin{enumerate}
+\item Method
+\label{sec-2-1-5-1}
+
+POST
+
+\item Path
+\label{sec-2-1-5-2}
+
+\texttt{/parle/users/signup/}
+
+\item Parameters
+\label{sec-2-1-5-3}
+
+\emph{POST Parameters}
+
+\begin{verbatim}
+{
+  "userName" : "string",
+  "userPassword" : "string"
+}
+\end{verbatim}
+
+\item Return
+\label{sec-2-1-5-4}
+
+\begin{verbatim}
+{
+  "userId" : "number"
+}
+\end{verbatim}
+\end{enumerate}
+\subsubsection{Delete User}
+\label{sec-2-1-6}
+\begin{enumerate}
+\item Method
+\label{sec-2-1-6-1}
+
+POST
+
+\item Path
+\label{sec-2-1-6-2}
+
+\texttt{/parle/users/delete}
+
+\item Parameters
+\label{sec-2-1-6-3}
+\begin{verbatim}
+{
+  "userId" : "number"
+}
+\end{verbatim}
+
+\item Return
+\label{sec-2-1-6-4}
+
+\begin{verbatim}
+{
+  "userId" : "number"
+}
+\end{verbatim}
+\end{enumerate}
+\subsubsection{Search Users by Name}
+\label{sec-2-1-7}
+\begin{enumerate}
+\item Method
+\label{sec-2-1-7-1}
+
+POST
+
+\item Path
+\label{sec-2-1-7-2}
+
+\texttt{/parle/users/search/}
+
+\item Parameters
+\label{sec-2-1-7-3}
+
+\emph{POST Parameters}
+
+\begin{verbatim}
+{
+  "searchUserName" : "string"
+}
+\end{verbatim}
+
+\item Return
+\label{sec-2-1-7-4}
+
+\begin{verbatim}
+[
+  {
+    "userId" : "number",
+    "userName" : "string",
+    "userStatus" : "string"
+  }
+]
+\end{verbatim}
+\end{enumerate}
 % Emacs 24.5.1 (Org mode 8.2.10)
 \end{document}

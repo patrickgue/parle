@@ -1,4 +1,4 @@
-#+TITLE: Parlé Technical Documentation
+#+TITLE: *Parlé* Technical Documentation
 #+LATEX_HEADER:\renewcommand{\familydefault}{phv}
 #+LATEX_HEADER:\usepackage[margin=1in]{geometry}
 #+LATEX_CLASS_OPTIONS:[a4paper,titlepage]
@@ -95,4 +95,124 @@ POST
 }
 #+END_EXAMPLE
 
-*** 
+*** Login
+
+
+**** Method
+
+POST
+
+**** Path
+
+=/parle/users/login=
+
+**** Parameters
+
+/POST Parameters/
+
+#+BEGIN_EXAMPLE
+{
+  "userName" : "string",
+  "userPassword" : "string" 
+}
+#+END_EXAMPLE
+
+**** Return
+
+***** Login Successful
+
+#+BEGIN_EXAMPLE
+{
+  "userId" : "number"
+}
+#+END_EXAMPLE
+
+***** Login Failed
+HTTP Status: /401/
+#+BEGIN_EXAMPLE
+wrong password
+#+END_EXAMPLE
+*** Signup
+**** Method
+
+POST
+
+**** Path
+
+=/parle/users/signup/=
+
+**** Parameters
+
+/POST Parameters/
+
+#+BEGIN_EXAMPLE
+{
+  "userName" : "string",
+  "userPassword" : "string"
+}
+#+END_EXAMPLE
+
+**** Return
+
+#+BEGIN_EXAMPLE
+{
+  "userId" : "number"
+}
+#+END_EXAMPLE
+*** Delete User
+**** Method
+
+POST
+
+**** Path
+
+=/parle/users/delete=
+
+**** Parameters
+#+BEGIN_EXAMPLE
+{
+  "userId" : "number"
+}
+#+END_EXAMPLE
+
+**** Return
+
+#+BEGIN_EXAMPLE
+{
+  "userId" : "number"
+}
+#+END_EXAMPLE
+*** Search Users by Name
+**** Method
+
+POST
+
+**** Path
+
+=/parle/users/search/=
+
+**** Parameters
+
+/POST Parameters/
+
+#+BEGIN_EXAMPLE
+{
+  "searchUserName" : "string"
+}
+#+END_EXAMPLE
+
+**** Return
+
+#+BEGIN_EXAMPLE
+[
+  {
+    "userId" : "number",
+    "userName" : "string",
+    "userStatus" : "string"
+  }
+]
+#+END_EXAMPLE
+
+** Chat Services
+*** Chatlist
+
