@@ -1,6 +1,6 @@
 (function() {
 
-  function AboutViewController (UserService,LocalStorageService,$scope) {
+  function AboutViewController (UserService, LocalStorageService, $scope) {
     let vm = this;
 
     vm.userName = "";
