@@ -1,4 +1,4 @@
-% Created 2016-07-27 Mi. 19:43
+% Created 2016-08-11 Do. 21:56
 \documentclass[a4paper,titlepage]{article}
 \usepackage[latin1]{inputenc}
 \usepackage[T1]{fontenc}
@@ -293,6 +293,59 @@ POST
   }
 ]
 \end{verbatim}
+\end{enumerate}
+
+\subsection{Chat Services}
+\label{sec-2-2}
+\subsubsection{Chatlist}
+\label{sec-2-2-1}
+
+\begin{enumerate}
+\item Method
+\label{sec-2-2-1-1}
+
+GET
+
+\item Path
+\label{sec-2-2-1-2}
+
+\texttt{/parle/chats/list/\{userId\}}
+
+
+\item Parameters
+\label{sec-2-2-1-3}
+
+\emph{Path Parameters}
+
+\texttt{userId}
+
+\item Return
+\label{sec-2-2-1-4}
+
+\begin{verbatim}
+[
+  {
+    "userId" : "number",
+    "userName" : "string",
+    "userStatus" : "string",
+    "chatName" : "string"
+  }
+]
+\end{verbatim}
+\end{enumerate}
+
+\subsubsection{Chat messages}
+\label{sec-2-2-2}
+\begin{enumerate}
+\item Method
+\label{sec-2-2-2-1}
+
+GET
+
+\item Path
+\label{sec-2-2-2-2}
+
+\texttt{/parle/chats/messages/\{chatId\}}
 \end{enumerate}
 % Emacs 24.5.1 (Org mode 8.2.10)
 \end{document}

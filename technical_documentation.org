@@ -216,3 +216,39 @@ POST
 ** Chat Services
 *** Chatlist
 
+**** Method
+
+GET
+
+**** Path
+
+=/parle/chats/list/{userId}=
+
+
+**** Parameters
+
+/Path Parameters/
+
+=userId=
+
+**** Return
+
+#+BEGIN_EXAMPLE
+[
+  {
+    "userId" : "number",
+    "userName" : "string",
+    "userStatus" : "string",
+    "chatName" : "string"
+  }
+]
+#+END_EXAMPLE
+
+*** Chat messages
+**** Method
+
+GET
+
+**** Path
+
+=/parle/chats/messages/{chatId}=
