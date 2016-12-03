@@ -1,0 +1,7 @@
+{
+    "title" : "parle backend",
+    "version" : "0.0.1-APLHA",
+    "license" : "GPL-3.0",
+    "description" : "Backend of parlé",
+    "dependencies" : {}
+}
