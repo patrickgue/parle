@@ -1,5 +1,11 @@
 language: node_js
 node_js:
  - "6"
-  
-script: node parle_backend/src/server.js
+
+
+before_script:
+ - cd parle_backend/src/
+ - npm install
+script:
+ - cd parle_backend/src/
+ - npm script run
