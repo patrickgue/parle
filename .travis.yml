@@ -7,5 +7,4 @@ before_script:
  - cd parle_backend/src/
  - npm install
 script:
- - cd parle_backend/src/
  - npm script run

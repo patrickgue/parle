@@ -8,7 +8,7 @@
     "sqlite3": "^3.1.8"
   },
   "scripts" : {
-    "run" : "node server.js"
+    "server" : "node server.js"
   }
 
 }
