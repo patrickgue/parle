@@ -1,2 +1,4 @@
+[[file:https://travis-ci.org/patrickgue/parle.svg?branch=master]]
+
 * parlé
 parlé is a app for private chating
