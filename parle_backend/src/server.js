@@ -52,11 +52,13 @@ app.use(bodyParser.urlencoded({
  * User Services
  */
 
-app.get("/parle/users/all", function(req, res) {
+function usersAll(req, res) {
   database.select("SELECT * FROM TPAR_USER", function(data){
     res.end(JSON.stringify(data));
   });
-});
+}
+
+app.get("/parle/users/all", usersAll);
 
 app.get("/parle/users/user/:userId/", function(req, res) {
   let userId = req.params.userId;
@@ -117,11 +119,13 @@ app.post("/parle/users/delete", function(req, res) {
   });
 });
 
-app.post("/parle/users/search", function(req, res) {
+function usersSearch(req, res) {
   database.select("SELECT * FROM VPAR_SIMPLEUSER WHERE userName LIKE '%"+req.body.searchUserName+"%'", function(data) {
     res.end(JSON.stringify(data));
   });
-});
+}
+
+app.post("/parle/users/search", usersSearch);
 
 
 /**
@@ -180,4 +184,24 @@ if(!TESTRUN) {
     var port = server.address().port;
     console.log(host, port);
   });
+}
+else {
+  /* test user search */
+  let userSearchReq = {
+    body : {
+      searchUserName : "Bo"
+    }
+  };
+
+  let usersAllSearchRes = {
+    end : function(data) {
+      console.log(data)
+      if(data === undefined || data === "[]") {
+        throw error("unexpected data")
+      }
+    }
+  };
+
+  usersSearch(userSearchReq,usersAllSearchRes);
+  usersAll(undefined,usersAllSearchRes)
 }
