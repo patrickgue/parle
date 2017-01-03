@@ -183,4 +183,4 @@ TSWLatexianTemp*
 *~
 
 # npm
-parle_backend/src/node_modules/*
+./parle_backend/src/node_modules

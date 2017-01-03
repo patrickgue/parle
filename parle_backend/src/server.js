@@ -18,6 +18,15 @@ const app = express();
 const sha1 = require('sha1');
 const bodyParser = require('body-parser')
 
+var TESTRUN = false
+
+process.argv.forEach((val, index) => {
+  if(val === "test") {
+    TESTRUN = true;
+  }
+  console.log(`${index}: ${val}`);
+});
+
 function error(str) {
   return {
     errorMessage : str
@@ -165,8 +174,10 @@ app.get("/parle/chats/messages/:chatId/:nrMessages/", function(req, res) {
     });
 });
 
-var server = app.listen(9080, function() {
-  var host = server.address().address;
-  var port = server.address().port;
-  console.log(host, port);
-});
+if(!TESTRUN) {
+  var server = app.listen(9080, function() {
+    var host = server.address().address;
+    var port = server.address().port;
+    console.log(host, port);
+  });
+}
