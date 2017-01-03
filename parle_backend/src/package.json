@@ -1,18 +1,11 @@
 {
-<<<<<<< HEAD
-  "title": "Parl� Backend",
-  "description": "Bakcend for the Parl� chating application",
+  "title": "Parlé Backend",
+  "description": "Backend for the Parlé chating application",
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "sha1": "^1.1.1",
     "sqlite3": "^3.1.8"
   }
-=======
-    "title" : "parle backend",
-    "version" : "0.0.1-APLHA",
-    "license" : "GPL-3.0",
-    "description" : "Backend of parlé",
-    "dependencies" : {}
->>>>>>> ac2a454d340775dacaa177475df159836d90fe38
+
 }
