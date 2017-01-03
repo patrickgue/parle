@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "title": "Parl� Backend",
   "description": "Bakcend for the Parl� chating application",
   "dependencies": {
@@ -7,4 +8,11 @@
     "sha1": "^1.1.1",
     "sqlite3": "^3.1.8"
   }
+=======
+    "title" : "parle backend",
+    "version" : "0.0.1-APLHA",
+    "license" : "GPL-3.0",
+    "description" : "Backend of parlé",
+    "dependencies" : {}
+>>>>>>> ac2a454d340775dacaa177475df159836d90fe38
 }
