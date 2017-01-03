@@ -9,6 +9,7 @@
     <button class="grid-20 grid-floatright grid-button inputgroup-right" ng-click="$ctrl.loadSearchUsers()"><span class="genericon genericon-search"></span></button>
   </div>
   <div>
+    <span ng-show="$ctrl.errorMessage" class="message error">{{$ctrl.errorMessage}}</span>
     <chat-menu ng-class="{active : $ctrl.selectedResult == user.userId}" ng-click="$ctrl.addUser(user.userId)" ng-repeat="user in $ctrl.results" name="user.userName" message="user.userStatus"></chat-menu>
   </div>
 </div>
@@ -16,7 +17,19 @@
   <button ng-click="$ctrl.addUserToMenuClose()" class="invert sml"><span class="genericon genericon-close"></span></button>
   <span>add user to</span><br/>
   <div>
-    <button class="grid-50 inputgroup-left grid-floatleft invert">new chat</button>
+    <button ng-click="$ctrl.openNewChatWindow()" class="grid-50 inputgroup-left grid-floatleft invert">new chat</button>
     <button class="grid-50 inputgroup-right grid-floatleft invert">existing chat</button>
   </div>
+</div>
+
+<div class="floating" ng-show="$ctrl.newChatWindow">
+  <div class="content full">
+    <span>New Chat</span>
+    <div>
+      <button ng-click="$ctrl.closeNewChatWindow()" class="grid-15 grid-floatleft grid-button inputgroup-left"><span class="genericon genericon-close"></span></button>
+      <input placeholder="Chat Name" ng-model="$ctrl.newChatName" class="grid-70 grid-floatleft inputgroup-center" type="text"/>
+      <button ng-click="$ctrl.createNewChat()" class="grid-15 grid-floatleft grid-button inputgroup-right">add</button>
+    </div>
+  </div>
+
 </div>

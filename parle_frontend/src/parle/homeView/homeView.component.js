@@ -59,11 +59,19 @@
         })
     };
 
+    vm.enter = function(chatId) {
+      self.chatId = chatId
+      viewMan.nav("chat");
+    }
+
   }
 
 
   angular.module("parleApp").component("homeView" , {
     controller : HomeViewController,
-    templateUrl : "parle/homeView/homeView.html"
+    templateUrl : "parle/homeView/homeView.html",
+    bindings : {
+      chatId : '='
+    }
   });
 })();

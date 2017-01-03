@@ -1,6 +1,7 @@
 (function() {
   function ChatMenuController() {
-    let vm = this;
+    let self = this;
+
   }
 
   angular.module("parleApp").component("chatMenu", {

@@ -181,3 +181,6 @@ TSWLatexianTemp*
 
 # Emacs
 *~
+
+# npm
+parle_backend/src/node_modules/*

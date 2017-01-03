@@ -11,12 +11,12 @@
  * License version 3 or higher.
  */
 
-
-var express = require('express');
-var database = require("./parle/dbService.js");
-var app = express();
-var sha1 = require('sha1');
-var bodyParser = require('body-parser')
+"use strict";
+const express = require('express');
+const database = require("./parle/dbService.js");
+const app = express();
+const sha1 = require('sha1');
+const bodyParser = require('body-parser')
 
 function error(str) {
   return {
@@ -50,7 +50,7 @@ app.get("/parle/users/all", function(req, res) {
 });
 
 app.get("/parle/users/user/:userId/", function(req, res) {
-  var userId = req.params.userId;
+  let userId = req.params.userId;
   database.select("SELECT * FROM VPAR_SIMPLEUSER WHERE userId = " + userId, function(data) {
     if(data.length === 0) {
       res.end(JSON.stringify({}));
@@ -61,8 +61,8 @@ app.get("/parle/users/user/:userId/", function(req, res) {
 });
 
 app.post("/parle/users/status/",function(req, res) {
-  var userId = req.body.userId;
-  var userStatus = req.body.userStatus;
+  let userId = req.body.userId;
+  let userStatus = req.body.userStatus;
   database.run("UPDATE TPAR_USER SET userStatus = '"+userStatus+"' WHERE userId = " + userId, function() {
     res.end(JSON.stringify(req.body));
   });
@@ -120,7 +120,7 @@ app.post("/parle/users/search", function(req, res) {
  */
 
 
-app.get("/parle/chats/:userId/", function(req, res) {
+app.get("/parle/chats/list/:userId/", function(req, res) {
   database.select("SELECT * FROM VPAR_CHATS WHERE userId = " + req.params.userId, function(data) {
     res.end(JSON.stringify(data));
   });
@@ -128,10 +128,42 @@ app.get("/parle/chats/:userId/", function(req, res) {
 
 
 app.post("/parle/chats/new", function(req, res) {
-  var chatname = req.body.chatName;
-  var users = req.body.users
+  let chatname = req.body.chatName;
+  let userId = req.body.userId;
+
+  database.run("INSERT INTO TPAR_CHAT (chatName) VALUES(?)",[chatname], function(chatId) {
+    database.run("INSERT INTO TPAR_CHATUSER (userId, chatId) VALUES (?,?)",[userId, chatId], function() {
+      res.end(JSON.stringify({
+        "chatName" : chatname,
+        "userId" : userId,
+        "chatId" : chatId
+      }));
+    });
+  });
 });
 
+app.post("/parle/chats/adduser", function(req, res) {
+  let chatId = req.body.chatId;
+  let userId = req.body.userId;
+
+  database.run("INSERT INTO TPAR_CHATUSER (userId, chatId) VALUES (?,?)",[userId, chatId], function() {
+    res.end(JSON.stringify({
+      "userId" : userId,
+      "chatId" : chatId
+    }));
+  });
+});
+
+
+app.get("/parle/chats/messages/:chatId/:nrMessages/", function(req, res) {
+    let chatId = req.params.chatId;
+    let nrOfMessages = req.params.nrMessages;
+
+    database.select("SELECT * FROM VPAR_CHATMESSAGES WHERE chatId = "+chatId + " LIMIT " + nrOfMessages, function(data) {
+	     console.log(data);
+	      res.end(JSON.stringify(data));
+    });
+});
 
 var server = app.listen(9080, function() {
   var host = server.address().address;

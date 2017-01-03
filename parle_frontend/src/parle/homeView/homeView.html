@@ -5,7 +5,7 @@
 </header>
 <div class="content">
   <span ng-show="$ctrl.errorMessage" class="message error">{{$ctrl.errorMessage}}</span>
-  <chat-menu ng-repeat="chat in $ctrl.users" name="chat.chatName" message="'chat.lastMessage'"></chat-menu>
+  <chat-menu ng-click="$ctrl.enter(chat)" ng-repeat="chat in $ctrl.users" name="chat.chatName" message="'chat.lastMessage'"></chat-menu>
 </div>
 <footer class="footer3elm">
   <a href="#addchat" class="elm"><span class="genericon genericon-plus"></span></a>
